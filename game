@@ -1,0 +1,265 @@
+import sys
+import time
+import datetime
+import random
+from tkinter import *
+import string
+
+def death():
+    slow_type("YOU DIED")
+    slow_type("\x1B[3mYou could not keep up with the Sandwich God's attacks\x1B[0m\n")
+
+def death1():
+    slow_type("YOU DIED")
+    slow_type("\x1B[3mThe giant sandwich crushed you\x1B[0m\n")
+
+def slow_type(t):
+    for l in t:
+        typing_speed = 100 #wpm
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        time.sleep(random.random()*10.0/typing_speed)
+
+def extra_slow_typing(t):
+    for l in t:
+        typing_speed = 25 #wpm
+        sys.stdout.write(l)
+        sys.stdout.flush()
+        time.sleep(random.random()*10.0/typing_speed)
+
+def Start():
+    slow_type("welcome to your local subway, what kind of bread would you like\n1. Italian\n2. Wheat\n3. Italian Herbs + Cheese\n4. Flatbread\n5. Instant progress(for the weak)\n")
+    answer1 = input()
+    if answer1 == "1":
+        choiceItalian()
+    elif answer1 == "2":
+        choiceWheat()
+    elif answer1 == "3":
+        choiceItalianHC()
+    elif answer1 == "69420":
+        choiceSecret()
+    elif answer1 == "3468":
+        choiceCodeEntered()
+    elif answer1 == "4":
+        choiceFlatbread()
+    elif answer1 == "e":
+        godBattle()
+
+
+def choiceItalian():
+    slow_type("you are going to italy\n")
+    slow_type("Will you go to Italy?\n1. No, I do not want to go to italy\n2. I will go to italy\n")
+    a2 = input()
+
+    if a2 == "1":
+        slow_type("you win this time\n")
+        time.sleep(1)
+        slow_type(" Code part one: 3\n") 
+        Start()
+
+    else:
+        print("YOU DIED\n")
+        slow_type("\x1B[3myou went to italy\x1B[0m\n")
+        time.sleep(1)
+        slow_type(" Code part one: 3\n")
+        Start()
+
+
+def choiceWheat():
+    slow_type("basic choice, not good enough\n")
+    a3 = input("1. Pick Again\n2. Leave Subway\n")
+    if a3 == "1":
+        Start()
+    else:
+        slow_type("As you walk out of the subway, you are hit by a speeding car.\n")
+        time.sleep(1)
+        print("YOU DIED\n")
+        slow_type("\x1B[3myou were struck by a speeding car\x1B[0m\n")
+        time.sleep(1)
+        slow_type("Code part two: 4\n")
+        Start()
+
+def choiceItalianHC():
+    slow_type("That will Be $12356349\n")
+    slow_type("Your balance is $12\n")
+    a3 = input("1. Try to pay\n2. Rob the store\n3. Pick again\n")
+    if a3 == "1":
+        slow_type("Card declined\n")
+        print("YOU DIED\n")
+        slow_type("\x1B[3mYou were to poor\x1B[0m\n")
+        time.sleep(1)
+        slow_type("Code part three: 6\n")
+        Start()
+
+
+    elif a3 == "2":
+        slow_type("You pull the 6 pound light artillery cannon out of your pocket and aim it at the clerk\n")
+        slow_type("The Clerk orders a laser-guided bombing run froma F-35 stealth Attack fighter, decimating you.\n")
+        print("YOU DIED\n")
+        slow_type("\x1B[3mYou were obliterated by a laser guided bomb\x1B[0m\n")
+        time.sleep(1)
+        slow_type("Code part three: 6\n")
+        Start()
+    else: Start()
+
+
+def choiceSecret():
+    slow_type("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+
+def choiceFlatbread():
+    slow_type("Ok, would you like that flat or thick?\n")
+    a4 = input("1. I'd like it flat\n2. I'd like it thick\n")
+    if a4 == "1":
+        slow_type("Of course, here you go\n")
+        slow_type("As you bite into the flatbread, you realize it is infact weapons grade plutonium\n")
+        slow_type("You try to spit it out, but it is to late\n")
+        time.sleep(1)
+        print("YOU DIED\n")
+        slow_type("\x1B[3mYou succumbed to acute radiation poisoning\x1B[0m\n")
+        time.sleep(1)
+        slow_type("Code part four: 8\n")
+        Start()
+    elif a4 == "2":
+        slow_type("Its \x1B[3mflatbread\x1B[0m you nincompoop\n")
+        time.sleep(2)
+        slow_type("You leave the subway in shame\n")
+        time.sleep(1)
+        slow_type("Code part four: 8\n")
+        Start()
+
+def choiceRailWayCar():
+        slow_type("1. Get on the railcar\n2. Don't get on the railcar\n")
+        answer2 = input()
+        if answer2 == "1":
+            slow_type("You get on the railway car, and it lurches foward\n")
+            railRide()
+        elif answer2 == "2":
+            slow_type("the clerk sees your hesitation and immediatly ignites 4.86 tons of dynamite, killing you instantly")
+            print("YOU DIED\n")
+            slow_type("\x1B[3mYou were blown up by the clerk\x1B[0m\n")
+            Start()
+
+
+def choiceCodeEntered():
+    slow_type("The subway clerk nods his head and gestures towards a doorway\n")
+    a5 = input("1. Go through the door\n2. Don't go through the door\n")
+    if a5 == "1":
+        slow_type("You walk to the door and open it, revealing stairs leading far below ground\nYou begin to walk down the stairs, until you reach a platform with a rail car waiting for you\n")
+        choiceRailWayCar()
+    elif a5 == "2":
+        slow_type("The clerk sees your hesitation and immediatly ignites 4.86 tons of dynamite, killing you instantly\n")
+        time.sleep(1)
+        print("YOU DIED\n")
+        slow_type("\x1B[3mYou were blown up by the clerk\x1B[0m\n")
+        Start()
+
+def railRide():
+    slow_type("The train chuggs along through the darkness, for what seems like hours\n")
+    slow_type("Suddenly, you see light\n")
+    slow_type("WHO HAS ENTERED THE HALL OF THE SANDWICH GOD?\n") 
+    slow_type("NO MATTER, I SHALL DESTROY YOU\n")
+    godBattle()
+
+def godBattle():
+    slow_type("Choose your weapon\n")
+    slow_type("1. 6 pound light artillery cannon\n2. The entire US military budget\n3. Real Knife\n4. A Sandwich\n")
+    a6 = input()
+    if a6 == "1":
+        slow_type("You aim the light arttilery cannon at the Sandwich God, and fire\n")
+        time.sleep(1)
+        slow_type("The shell flies towards the Sandwich God, but it is no good. It does no damage\n")
+        print("YOU DIED\n")
+        slow_type("\x1B[3mYou were obliterated by the Sandwich God\x1B[0m\n")
+        Start()
+    elif a6 == "2":
+        time.sleep(1)
+        print("YOU DIED\n")
+        slow_type("\x1B[3mYou were crushed by 1704173286.6891 lbs. of US $100 bills\x1B[0m\n")
+        Start()
+    elif a6 == "3":
+        slow_type("You found the Real Knife!\n")
+        slow_type("You attempt to stab the Sandwich god, but he melts the knife before you can\n")
+        time.sleep(1)
+        print("YOU DIED\n")
+        slow_type("\x1B[3mYour hand was melted off by the Sandwich God\x1B[0m\n")
+        Start()
+    elif a6 == "4":
+        slow_type("You pull an italian meatball footlong sandwich from your back pocket\n")
+        swordBattle()
+
+def swordBattle():
+    slow_type("How will you fight?\n")
+    slow_type("1. Offensive\n2. Defensive\n")
+    a7 = input()
+    if a7 == "1":
+        slow_type("You charge at the sandwich god, swinging the sandwich wildly\n")
+        print("\x1B[3mFIGHT!\x1B[0m\n")
+        combat()
+    elif a7 == "2":
+        slow_type("The Sandwich God swings a giant sandwich towards you\n")
+        print("\x1B[3mFIGHT!\x1B[0m\n")
+        print("Press A!")
+        b1 = input()
+        if b1 == "a":
+            print("Press B!")
+            b2 = input()
+            if b2 == "b":
+                deflected()
+        else:
+            slow_type("You loose!")
+            
+
+def combat():
+    print("Press A!")
+    b1 = input()
+    if b1 == "a":
+        print("Press B!")
+        b2 = input()
+        if b2 == "b":
+            attacked()
+    else:
+        slow_type("You loose!")
+    
+    
+def godDefeat():
+    time.sleep(2)
+    slow_type("The Great Sandwich Crown decends upon you!\n")
+    slow_type("Will you accept it?\n")
+    slow_type("1. Yes\n2. No\n")
+    a8 = input()
+    if a8 == "1":
+        slow_type("You have become the new Sandwich God\n")
+        slow_type("You rule powerfully as the Sandwich god, ruler of all sandwich stores,\nfor all eternity\n")
+        extra_slow_typing("\x1B[3mTHE END\x1B[0m\n")
+        credits()
+    elif a8 == "2":
+        slow_type("you choose not to accept the crown, and are teleported back to the outside world.\n")
+        slow_type("As it turns out, you had destroyed the Sandwich God, and without a new one, every sandwich store in the world had closed.\n")
+        time.sleep(1)
+        slow_type("you are single handedly responisble for the downfall of all sandwiches\n")
+        extra_slow_typing("\x1B[3mTHE END\x1B[0m\n")
+        credits()
+
+def deflected():
+    slow_type("You deflect the Sandwich God's giant sandwich blade\n")
+    slow_type("You run up the sandwich, dragging the meatball sandwich with you,\nAnd in a single upward slash you cut the Sandwich God in half\n")
+    godDefeat()
+
+def attacked():
+    slow_type("You block all of the Sandwich God's attacks\nRush towards him, and with with the force of a thousand (meat)balls,\nYou obliterate the Sandwich God\n")
+    godDefeat()
+
+def credits():
+    slow_type("Story: Nolan Kasperowicz\n")
+    slow_type("Programming: Nolan Kasperowicz\n")
+    slow_type("Thanks For Playing!\n")
+    slow_type("Would you like to play agaim?\n1. Yes\n2. No\n")
+    a9 = input()
+    if a9 == "1":
+        Start()
+    elif a9 == "2":
+        quit()
+
+
+
+Start()
